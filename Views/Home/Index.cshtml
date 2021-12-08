@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Grid
+
+
+<table class="stage-grid">
+    @{
+        for(int row = 0; row < Model.width; row++){
+            <tr>
+                @{
+                    for(int col = 0; col < Model.length; col++){
+                        <td id="">
+                            @{
+                            switch(Model.grid[row,col].type)
+                            {
+                                case 0:
+                                    <img src="~/images/Tiles/Retina/tileGrass1.png">
+                                break;
+                                case 1:
+                                    <img src="~/images/Tiles/Retina/tileSand1.png">
+                                break;
+                            }
+                            }
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    }
+</table>
+
